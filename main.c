@@ -174,7 +174,7 @@ void main(void)
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN; 
 	GPIOD->MODER |= (uint32_t)(0b1 << 24);	//green led
 	GPIOD->PUPDR |= (uint32_t)(0b1 << 24);
-
+	green_led_on();
 	char get_instruction_buffer[255];
 	unsigned char byte_counter = 0;
 	unsigned char length;

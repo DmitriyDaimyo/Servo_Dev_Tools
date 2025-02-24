@@ -1,8 +1,8 @@
-CC=../arm-tools/bin/arm-none-eabi-gcc
-OBJDUMP=../arm-tools/bin/arm-none-eabi-objdump
+CC= ../arm_tools/bin/arm-none-eabi-gcc
+OBJDUMP=../arm_tools/bin/arm-none-eabi-objdump
 MACH=cortex-m4
-OPENOCD=../xpack-openocd-0.12.0-6/bin/openocd
-GDB=arm-none-eabi-gdb
+OPENOCD=../xpack-openocd-0.12.0-3/bin/openocd
+GDB= ../arm_tools/bin/arm-none-eabi-gdb
 
 CFLAGS= -c -mcpu=$(MACH) -mthumb -std=gnu11 -Wall -O0 -I../inlcude/ -I../stm32f4-discovery-lib-master/cmsis/ -I../stm32f4-discovery-lib-master/stm32/
 LINKFLAGS= -nostdlib -T stm32_ls.ld -Wl,-Map=final.map
@@ -30,7 +30,7 @@ clean:
 	rm -rf *.o *.elf
 	
 load:
-	$(OPENOCD) -f ../xpack-openocd-0.12.0-6/openocd/scripts/board/stm32f4discovery.cfg
+	$(OPENOCD) -f ../xpack-openocd-0.12.0-3/openocd/scripts/board/stm32f4discovery.cfg
 
 gdb:
 	$(GDB)
