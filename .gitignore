@@ -1,0 +1,12 @@
+*.o
+*.elf
+*.map
+*gdb*
+*.vscode*
+stm32f4-discovery-lib-master
+venv
+dynamixel
+
+GUI_program.py
+test.py
+read_serial.py
